@@ -24,7 +24,7 @@ const credentials = Buffer.from(`${process.env.EFI_CLIENT_ID}:${process.env.EFI_
 
 const app = express();
 app.use(bodyParser.json)
-const port = 3000;
+const port = 8000;
 const router = express.Router();
 
 app.set('view engine', 'ejs');
