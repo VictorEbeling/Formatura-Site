@@ -10,7 +10,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 
 const cert = fs.readFileSync(
-    path.resolve(__dirname, `./certificados/${process.env.EFI_CERT}`)
+    path.resolve(__dirname, `./certs/${process.env.EFI_CERT}`)
 );
 
 const agent = new https.Agent({
