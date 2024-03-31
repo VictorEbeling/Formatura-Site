@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>presentes</title>
+</head>
+<body>
+    
+    <header>
+        <img id="logo" src="img/logo.png" alt="">
+    </header>
+
+    <main>
+        <div class="card">
+            <img class="gift-img" src="img/toaster.png" alt="">
+            <div class="subtitle">
+                <button class="plus-button">+</button>
+                <h1 class="counter">0</h1>
+                <button class="minus-button">-</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="gift-img" src="img/toaster.png" alt="">
+            <div class="subtitle">
+                <button class="plus-button">+</button>
+                <h1 class="counter">0</h1>
+                <button class="minus-button">-</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="gift-img" src="img/toaster.png" alt="">
+            <div class="subtitle">
+                <button class="plus-button">+</button>
+                <h1 class="counter">0</h1>
+                <button class="minus-button">-</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="gift-img" src="img/toaster.png" alt="">
+            <div class="subtitle">
+                <button class="plus-button">+</button>
+                <h1 class="counter">0</h1>
+                <button class="minus-button">-</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="gift-img" src="img/toaster.png" alt="">
+            <div class="subtitle">
+                <button class="plus-button">+</button>
+                <h1 class="counter">0</h1>
+                <button class="minus-button">-</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="gift-img" src="img/toaster.png" alt="">
+            <div class="subtitle">
+                <button class="plus-button">+</button>
+                <h1 class="counter">0</h1>
+                <button class="minus-button">-</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="gift-img" src="img/toaster.png" alt="">
+            <div class="subtitle">
+                <button class="plus-button">+</button>
+                <h1 class="counter">0</h1>
+                <button class="minus-button">-</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="gift-img" src="img/toaster.png" alt="">
+            <div class="subtitle">
+                <button class="plus-button">+</button>
+                <h1 class="counter">0</h1>
+                <button class="minus-button">-</button>
+            </div>
+        </div>
+
+        
+
+    </main>
+
+    <a onclick="sendPrice()" id="checkout-button">
+        <h2>Finalize O Pagamento!</h2>
+    </a>
+
+    
+
+</body>
+
+<script>
+
+const counters = document.querySelectorAll(".counter");
+
+let giftValue;
+
+var qtd = Array.from({length: counters.length}).fill(0);
+
+const plusButtons = document.querySelectorAll(".plus-button");
+const minusButtons = document.querySelectorAll(".minus-button");
+
+for(let i = 0; i < counters.length; i++){
+    plusButtons[i].addEventListener('click', ()=>{
+        qtd[i]++;
+        updateCounter(i);
+    })
+
+    minusButtons[i].addEventListener('click', ()=>{
+        if(qtd[i] > 0){
+            qtd[i]--;
+            updateCounter(i);
+        }
+    })
+    
+}
+
+function updateCounter(i){
+    counters[i].innerHTML = qtd[i];
+}
+
+function sendPrice(){
+    const totalQtd = qtd.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
+    },0)
+
+    window.location.href = `/checkout/${totalQtd}`
+}
+
+</script>
+
+
+</html>
+
