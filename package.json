@@ -14,13 +14,13 @@
   "name": "site",
   "version": "1.0.0",
   "scripts": {
-    "start:dev": "nodemon server.js"
+    "start:dev": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "private": "true",
-  "main": "index.js",
+  "main": "src/server.js",
   "devDependencies": {
     "dotenv": "^16.4.5",
     "nodemon": "^3.1.0"

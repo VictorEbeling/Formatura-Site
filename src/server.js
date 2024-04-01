@@ -10,7 +10,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 
 const cert = fs.readFileSync(
-    path.resolve(__dirname, `./certs/${process.env.EFI_CERT}`)
+    path.resolve(__dirname, `../certs/${process.env.EFI_CERT}`)
 );
 
 const agent = new https.Agent({
@@ -23,13 +23,16 @@ const credentials = Buffer.from(`${process.env.EFI_CLIENT_ID}:${process.env.EFI_
 
 
 const app = express();
-app.use(bodyParser.json)
-const port = 8000;
+app.use(bodyParser.json())
+
+const port = 3000;
 const router = express.Router();
 
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(`${__dirname}/../public`));
+
+
 
 
 app.get('/', (req, res) => {
@@ -39,6 +42,8 @@ app.get('/', (req, res) => {
 app.get('/presentes', (req, res) => {
     res.render('gifts')
 })
+
+
 
 app.get('/checkout/:price', async (req, res) => {
     
@@ -96,7 +101,7 @@ app.get('/checkout/:price', async (req, res) => {
 
 })
 
-app.listen(port, () => {
+app.listen(3000, () => {
     console.log('running')
 })
 
