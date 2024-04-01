@@ -1,4 +1,5 @@
-certs/
+certs\homologacao-560478.p12
+certs\producao-560478.p12
 efi-dev-aws-ec2.pem
 node_modules
 .env
