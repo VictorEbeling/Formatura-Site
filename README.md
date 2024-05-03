@@ -2,6 +2,8 @@
 
 Website made to receive gifts made to a student that graduated Law School, packed with a payment system.
 
+![](https://github.com/Formatura-Site/WebsiteGif.gif)
+
 ## Built With
 
 * [FlipDownJS]https://github.com/PButcher/flipdown - FlipDown Framework
