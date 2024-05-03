@@ -54,12 +54,14 @@
 .flipdown.flipdown__theme-light .rotor-leaf-front {
   color: #222222;
   background-color: #DDDDDD;
+  
 }
 /* Rotor bottoms */
 .flipdown.flipdown__theme-light .rotor-bottom,
 .flipdown.flipdown__theme-light .rotor-leaf-rear {
   color: #333333;
   background-color: #EEEEEE;
+  
 }
 /* Hinge */
 .flipdown.flipdown__theme-light .rotor:after {
@@ -137,6 +139,7 @@
   font-size: 4rem;
   text-align: center;
   perspective: 200px;
+  border: white solid 1px;
 }
 
 .flipdown .rotor:last-child {
@@ -158,6 +161,7 @@
   height: 80px;
   transform-style: preserve-3d;
   transition: transform 0s;
+
 }
 
 .flipdown .rotor-leaf.flipped {

@@ -4,94 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title>presentes</title>
 </head>
 <body>
     
-    <header>
+    <header id="header-gifts">
         <img id="logo" src="img/logo.png" alt="">
+        <h1>Formatura</h1>
     </header>
 
     <main>
-        <div class="card">
-            <img class="gift-img" src="img/toaster.png" alt="">
-            <div class="subtitle">
-                <button class="plus-button">+</button>
-                <h1 class="counter">0</h1>
-                <button class="minus-button">-</button>
-            </div>
-        </div>
+
 
         <div class="card">
             <img class="gift-img" src="img/toaster.png" alt="">
             <div class="subtitle">
-                <button class="plus-button">+</button>
-                <h1 class="counter">0</h1>
-                <button class="minus-button">-</button>
+                <h1>R$ 25</h1><i onclick="sendPrice(1)" class="bi bi-bag-plus-fill"></i>
             </div>
         </div>
-
         <div class="card">
             <img class="gift-img" src="img/toaster.png" alt="">
             <div class="subtitle">
-                <button class="plus-button">+</button>
-                <h1 class="counter">0</h1>
-                <button class="minus-button">-</button>
+                <h1>R$ 50</h1><i onclick="sendPrice(2)" class="bi bi-bag-plus-fill"></i>
             </div>
         </div>
-
         <div class="card">
             <img class="gift-img" src="img/toaster.png" alt="">
             <div class="subtitle">
-                <button class="plus-button">+</button>
-                <h1 class="counter">0</h1>
-                <button class="minus-button">-</button>
+                <h1>R$ 75</h1><i onclick="sendPrice(3)" class="bi bi-bag-plus-fill"></i>
             </div>
         </div>
-
         <div class="card">
             <img class="gift-img" src="img/toaster.png" alt="">
             <div class="subtitle">
-                <button class="plus-button">+</button>
-                <h1 class="counter">0</h1>
-                <button class="minus-button">-</button>
+                <h1>R$ 100</h1><i onclick="sendPrice(4)" class="bi bi-bag-plus-fill"></i>
             </div>
         </div>
-
         <div class="card">
             <img class="gift-img" src="img/toaster.png" alt="">
             <div class="subtitle">
-                <button class="plus-button">+</button>
-                <h1 class="counter">0</h1>
-                <button class="minus-button">-</button>
+                <h1>R$ 125</h1><i onclick="sendPrice(5)" class="bi bi-bag-plus-fill"></i>
             </div>
         </div>
-
         <div class="card">
             <img class="gift-img" src="img/toaster.png" alt="">
             <div class="subtitle">
-                <button class="plus-button">+</button>
-                <h1 class="counter">0</h1>
-                <button class="minus-button">-</button>
+                <h1>R$ 150</h1><i onclick="sendPrice(6)" class="bi bi-bag-plus-fill"></i>
             </div>
         </div>
-
         <div class="card">
             <img class="gift-img" src="img/toaster.png" alt="">
             <div class="subtitle">
-                <button class="plus-button">+</button>
-                <h1 class="counter">0</h1>
-                <button class="minus-button">-</button>
+                <h1>R$ 200</h1><i onclick="sendPrice(7)" class="bi bi-bag-plus-fill"></i>
             </div>
         </div>
-
-        
+        <div class="card">
+            <img class="gift-img" src="img/toaster.png" alt="">
+            <div class="subtitle">
+                <input type="text" id="custom-price" placeholder="0R$"><i onclick="sendCustomPrice()" class="bi bi-bag-plus-fill"></i>
+            </div>
+        </div>
 
     </main>
-
-    <a onclick="sendPrice()" id="checkout-button">
-        <h2>Finalize O Pagamento!</h2>
-    </a>
 
     
 
@@ -105,34 +80,23 @@ let giftValue;
 
 var qtd = Array.from({length: counters.length}).fill(0);
 
-const plusButtons = document.querySelectorAll(".plus-button");
-const minusButtons = document.querySelectorAll(".minus-button");
+function sendPrice(price){
 
-for(let i = 0; i < counters.length; i++){
-    plusButtons[i].addEventListener('click', ()=>{
-        qtd[i]++;
-        updateCounter(i);
-    })
+    window.location.href = `/checkout/${price}`
+}
 
-    minusButtons[i].addEventListener('click', ()=>{
-        if(qtd[i] > 0){
-            qtd[i]--;
-            updateCounter(i);
-        }
-    })
+function sendCustomPrice(){
+    let input = document.getElementById("custom-price").value;
+    let isnum = /^\d+$/.test(input);
+
+    if(isnum){
+        window.location.href = `/checkout/${input}`
+    }else{
+        window.alert("valor inválido")
+    }
+
     
-}
 
-function updateCounter(i){
-    counters[i].innerHTML = qtd[i];
-}
-
-function sendPrice(){
-    const totalQtd = qtd.reduce((accumulator, currentValue) => {
-        return accumulator + currentValue;
-    },0)
-
-    window.location.href = `/checkout/${totalQtd}`
 }
 
 </script>

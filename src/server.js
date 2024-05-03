@@ -62,13 +62,6 @@ app.get('/checkout/:price', async (req, res) => {
             grant_type: 'client_credentials'
         }
     })
-
-    app.post('/webhook(/pix)?', (req, res) => {
-        console.log(req.body);
-        res.send('200');
-    });
-    
-    
     
     const accessToken = authResponse.data?.access_token;
 
