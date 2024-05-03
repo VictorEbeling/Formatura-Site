@@ -2,7 +2,7 @@
 
 Website made to receive gifts made to a student that graduated Law School, packed with a payment system.
 
-![](https://github.com/Formatura-Site/WebsiteGif.gif)
+![](https://github.com/VictorEbeling/Formatura-Site/WebsiteGif.gif)
 
 ## Built With
 
