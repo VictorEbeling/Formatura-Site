@@ -65,6 +65,7 @@ main{
 
 .gift-img{
     width: 100%;
+    height: 300px;
     border: solid 1px black;
     border-radius: 50px 50px 0 0;
     background: linear-gradient(45deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 100%);
