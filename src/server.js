@@ -82,7 +82,7 @@ app.get('/checkout/:price', async (req, res) => {
         valor: {
             original: price
         },
-        chave: '72036087000',
+        chave: 'ebelingvictor@gmail.com',
         solicitacaoPagador: 'Obrigado Pelo Presente!'
     }
 
