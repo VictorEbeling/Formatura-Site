@@ -48,7 +48,7 @@ app.get('/presentes', (req, res) => {
 app.get('/checkout/:price', async (req, res) => {
     
 
-    const price = parseInt(req.params.price)
+    const price = parseFloat(req.params.price).toFixed(2)
 
     const authResponse = await axios({
         method: 'POST',
@@ -80,7 +80,7 @@ app.get('/checkout/:price', async (req, res) => {
             'expiracao': 3600
         },
         valor: {
-            original: `${price.toString()}.00`
+            original: price
         },
         chave: '72036087000',
         solicitacaoPagador: 'Obrigado Pelo Presente!'

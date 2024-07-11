@@ -17,7 +17,7 @@ body{
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -45,6 +45,18 @@ header{
     margin-top: 2%;
 }
 
+#flipdown{
+    flex-shrink: 0;
+}
+
+#button-div{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 main{
     width: 100%;
     height: 100%;
@@ -64,22 +76,64 @@ main{
 }
 
 .gift-img{
+    width: 80%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.gift-div{
     width: 100%;
     height: 300px;
-    border: solid 1px black;
     border-radius: 50px 50px 0 0;
     background: linear-gradient(45deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 100%);
+    border: solid 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#camisa-social{
+    width: 60%;
+    height: 90%;
+}
+
+#vade-mecum{
+    width: 60%;
+    height: 90%;
+}
+
+#jack-daniels{
+    width: 70%;
+    height: 80%;
+}
+
+#copo-stanley{
+    width: 45%;
+}
+
+#cadeira-de-couro{
+    width: 70%;
+    height: 80%;
+}
+
+.price{
+    font-weight: 450;
 }
 
 .subtitle{
     height: 10%;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     border: solid 1px black;
     border-top: none;
     padding: 2%;
+}
+
+.text{
+    margin-left: 20px;
 }
 
 #logo{
@@ -98,13 +152,13 @@ main{
     display: none;
 }
 
-#gift-button{
+
+#presenteie-button{
     color: white;
     height: 80px;
     width: 200px;
-    background-color: #9E1C3F;
-    margin-top: 10vh;
     margin-bottom: 10vh;
+    background-color: #9E1C3F;
     border-radius: 5px;
     text-align: center;
     display: flex;
@@ -112,9 +166,23 @@ main{
     align-items: center;
     font-size: .6rem;
     border: 1px solid white;
+    transition: all .1s;
+}
+
+#presenteie-button:hover{
+    cursor: pointer;
+    width: 210px;
+    height: 90px;
+}
+
+#gift-button{
+    margin-right: 20px;
 }
 
 #custom-price{
+    margin-left: 20px;
+    padding: 6px;
+    border-radius: 10px;
     transition: border .5s;
     outline: none;
 }
@@ -132,13 +200,13 @@ main{
     height: 10%;
 }
 
-.bi-bag-plus-fill{
+.bi-gift-fill{
     font-size: 2rem;
     margin-bottom: 20px;
     transition: color .2s;
 }
 
-.bi-bag-plus-fill:hover{
+.bi-gift-fill:hover{
     color: #9E1C3F;
 }
 
@@ -160,7 +228,15 @@ main{
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 1200px) {
+
+    .card{
+        width: 40%;
+    }
+
+}
+
+@media (max-width: 600px) {
     
     body{
         height: 100vh;
