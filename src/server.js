@@ -94,7 +94,17 @@ app.get('/checkout/:price', async (req, res) => {
 
 })
 
-app.post("/webhook/pix", (request, response) => {
+app.post("/webhook", (request, response) => {
+    // Verifica se a requisição que chegou nesse endpoint foi autorizada
+    if (request.socket.authorized) {
+      response.status(200).end();
+    } else {
+      response.status(401).end();
+    }
+  });
+  
+  // Endpoind para recepção do webhook tratando o /pix
+  app.post("/webhook/pix", (request, response) => {
     if (request.socket.authorized) {
       //Seu código tratando a callback
       /* EXEMPLO:
