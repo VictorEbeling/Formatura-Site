@@ -16,6 +16,7 @@ const cert = fs.readFileSync(
 const agent = new https.Agent({
     pfx: cert,
     passphrase: '',
+    ca: fs.readFileSync("../certificate-chain-prod.crt")
 
 });
 
@@ -94,7 +95,7 @@ app.get('/checkout/:price', async (req, res) => {
 
 })
 
-app.post("/webhook", (request, response) => {
+app.post('/webhook', (request, response) => {
     // Verifica se a requisição que chegou nesse endpoint foi autorizada
     if (request.socket.authorized) {
       response.status(200).end();
