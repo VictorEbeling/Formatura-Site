@@ -2,3 +2,4 @@ efi-dev-aws-ec2.pem
 node_modules
 .env
 certs
+git-filter-repo.txt
