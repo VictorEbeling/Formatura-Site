@@ -25,7 +25,17 @@ body{
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../img/bg.png');
+    background-image: url('../img/bg2.png');
+}
+
+#header-bar{
+    height: 30px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    background-color: #9E1C3F;
 }
 
 header{
@@ -37,11 +47,15 @@ header{
 
 #header-gifts{
     border-bottom: solid 2px grey;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
     flex-direction: row;
     align-items: flex-start;
 }
 
-#header-gifts h1{
+#text{
     margin-top: 2%;
 }
 
@@ -246,6 +260,14 @@ main{
         width: 100px;
     }
 
+    #text h1{
+        font-size: 2rem;
+    }
+
+    #text h2{
+        display: none;
+    }
+
     #title h1:nth-child(1){
         display: none;
     }
@@ -253,13 +275,13 @@ main{
     #title h1:nth-child(2){
         display: block;
     }
-       
+
     .card{
         width: 80%;
         height: 40%;
         margin: 10%;
     }
-
+    
     .subtitle{
         height: 20%;
     }

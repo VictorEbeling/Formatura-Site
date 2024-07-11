@@ -8,6 +8,7 @@
     "express": "^4.19.2",
     "flipdown": "^0.3.2",
     "fs": "^0.0.1-security",
+    "morgan": "^1.10.0",
     "qrcode-pix": "^5.0.0",
     "stream": "^0.0.2"
   },
