@@ -16,8 +16,9 @@ const cert = fs.readFileSync(
 const agent = new https.Agent({
     pfx: cert,
     passphrase: '',
-    ca: fs.readFileSync("../certificate-chain-prod.crt")
-
+    rejectUnauthorized: true,
+    minVersion: "TLSv1.2",
+    requestCert: true,
 });
 
 const credentials = Buffer.from(`${process.env.EFI_CLIENT_ID}:${process.env.EFI_CLIENT_SECRET}`).toString('base64');
@@ -91,25 +92,22 @@ app.get('/checkout/:price', async (req, res) => {
 
     const qrcodeResponse = await reqEFI.get(`/v2/loc/${cobResponse.data.loc.id}/qrcode`)
 
-    res.render('checkout', {qrcodeImage: qrcodeResponse.data.imagemQrcode})
+    res.render('checkout', {qrcodeImage: qrcodeResponse.data.imagemQrcode, qrcodeString: qrcodeResponse.data.qrcode})
 
 })
 
 app.post('/webhook(/pix)?', (request, response) => {
     // Verifica se a requisição que chegou nesse endpoint foi autorizada
-    if (request.socket.authorized) {
-      response.status(200).end();
-    } else {
-      response.status(401).end();
-    }
+	console.log(request.body);
+	response.send('200');
+	response.render('webhook');
   });
-  
+
 
 app.listen(3000, () => {
     console.log('running')
 })
 
-    
 
 
 

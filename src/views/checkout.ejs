@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title>checkout</title>
 </head>
 <body>
@@ -15,8 +16,20 @@
     <div id="qrcode-card">
         <img src="<%=qrcodeImage%>">
         <h1>Pague Aqui!</h1>
-    </div>
+	<div id="span-div">
+	  <i onclick="copyCode()" class="bi bi-clipboard-fill"></i>	  
+	  <span id="qrcode-span"><%=qrcodeString%></span>	  
+        </div>    
+</div>
 
     
 </body>
+
+<script>
+function copyCode(){
+  var code = '<%= qrcodeString %>';
+  navigator.clipboard.writeText(code);
+}
+</script>
+
 </html>

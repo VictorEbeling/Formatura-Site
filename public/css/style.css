@@ -21,6 +21,27 @@ body{
     align-items: center;
 }
 
+#span-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 40px;
+    border-radius: 1rem;
+    background-color: white;
+    border: solid 2px #9E1C3F;
+}
+
+span{
+    width: 150px;
+    display: block;
+    margin: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
 #body-index{
     height: 100vh;
     background-size: cover;
@@ -221,6 +242,16 @@ main{
 }
 
 .bi-gift-fill:hover{
+    color: #9E1C3F;
+}
+
+.bi-clipboard-fill{
+    font-size: 1.5rem;
+    transition: color .2s;
+    margin: 10px;
+}
+
+.bi-clipboard-fill:hover{
     color: #9E1C3F;
 }
 
