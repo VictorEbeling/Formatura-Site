@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // Unix timestamp (in seconds) to count down to
-  var Date = 1723923000;
+  var Date = 1723923000
+  //1723923000
 
   // Set up FlipDown
   var flipdown = new FlipDown(Date)
@@ -11,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Do something when the countdown ends
     .ifEnded(() => {
-      console.log('The countdown has ended!');
+      document.getElementById("flipdown").style.display = "none";
+      document.getElementById("endCountdownDiv").style.display = "block";
     });
 
 })

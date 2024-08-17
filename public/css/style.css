@@ -227,6 +227,19 @@ main{
     transition: all .1s;
 }
 
+#endCountdownDiv{
+    display: none;
+    margin-top: 40px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 5rem;
+    font-weight: bolder;
+    color: #9E1C3F;
+    text-shadow: 3px 3px #d4a4b1;
+    text-align: center;
+
+
+}
+
 #presenteie-button:hover{
     cursor: pointer;
     width: 210px;
