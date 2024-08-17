@@ -1,6 +1,7 @@
 @charset 'utf-8';
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+CU:wght@100..400&display=swap');
 
 *{
     margin: 0;
@@ -23,9 +24,9 @@ body{
 
 #span-div{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    width: 180px;
+    width: 240px;
     height: 40px;
     border-radius: 1rem;
     background-color: white;
@@ -33,12 +34,9 @@ body{
 }
 
 span{
-    width: 150px;
     display: block;
     margin: 3px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin-right: 20px;
 }
 
 
@@ -66,6 +64,21 @@ header{
     align-items: center;
 }
 
+#title1{
+   font-family: "Playwrite CU", cursive;
+   font-size: 2.5rem;
+}
+
+#title2{
+   font-family: "Montserrat", sans-serif;
+   font-size: 3rem;
+}
+
+#title3{
+    font-family: "Playwrite CU", cursive;
+    font-size: 2.5rem;
+}
+
 #header-gifts{
     border-bottom: solid 2px grey;
     width: 100%;
@@ -77,7 +90,11 @@ header{
 }
 
 #text{
-    margin-top: 2%;
+    margin: 2%;
+}
+
+#text h1{
+    color: #9E1C3F;
 }
 
 #flipdown{
@@ -115,6 +132,7 @@ main{
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 50px 50px 0 0;
 }
 
 .gift-div{
@@ -126,6 +144,14 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#viagem{
+    width: 100%;
+}
+
+#gravata{
+    width: 100%;
 }
 
 #camisa-social{
@@ -157,7 +183,7 @@ main{
 }
 
 .subtitle{
-    height: 10%;
+    max-height: 20%;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -168,12 +194,14 @@ main{
 }
 
 .text{
+    font-size: 12px;
+    max-height: 100%;
     margin-left: 20px;
 }
 
 #logo{
     width: 200px;
-    margin: 2%;
+    margin-top: 80px;
 }
 
 #title{
@@ -182,11 +210,6 @@ main{
     text-align: center;
     color: black;
 }
-
-#title h1:nth-child(2){
-    display: none;
-}
-
 
 #presenteie-button{
     color: white;
@@ -212,10 +235,12 @@ main{
 
 #gift-button{
     margin-right: 20px;
+    margin-left: 10px;
 }
 
 #custom-price{
-    margin-left: 20px;
+    width: 60%;
+    margin-left: 10px;
     padding: 6px;
     border-radius: 10px;
     transition: border .5s;
@@ -263,28 +288,45 @@ main{
     align-items: center;
 }
 
-@media (max-width: 1600px) {
-    #body-index{
-        background: none;
-    }
+@media (max-width: 1300px) {
 
     #gift-button{
         border: none;
     }
+
+    #title1{
+        font-size: 2rem;
+    }
+
+    #title2{
+        font-size: 2.5rem;
+    }
+
+    #title3{
+	display: none;
+    }
+
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
 
     .card{
         width: 40%;
     }
 
+
+
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
     
     body{
         height: 100vh;
+    }
+
+    #body-index{
+        background-position: right 80% bottom 0%;
+        background-size: 220%;
     }
     
     #logo{
@@ -299,14 +341,6 @@ main{
         display: none;
     }
 
-    #title h1:nth-child(1){
-        display: none;
-    }
-
-    #title h1:nth-child(2){
-        display: block;
-    }
-
     .card{
         width: 80%;
         height: 40%;
@@ -314,7 +348,7 @@ main{
     }
     
     .subtitle{
-        height: 20%;
+        max-height: 20%;
     }
 
     #qrcode-card{

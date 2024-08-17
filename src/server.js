@@ -45,6 +45,11 @@ app.get('/presentes', (req, res) => {
     res.render('gifts')
 })
 
+app.get('/paymentsuccessful', (req, res) => {
+
+   res.render('paymentsuccessful')
+})
+
 
 
 app.get('/checkout/:price', async (req, res) => {
@@ -96,11 +101,10 @@ app.get('/checkout/:price', async (req, res) => {
 
 })
 
-app.post('/webhook(/pix)?', (request, response) => {
+app.post('/webhook/pix', (req, res) => {
     // Verifica se a requisição que chegou nesse endpoint foi autorizada
-	console.log(request.body);
-	response.send('200');
-	response.render('webhook');
+	console.log(res.body);        
+	res.render('paymentsuccesful');
   });
 
 
